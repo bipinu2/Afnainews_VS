@@ -50,7 +50,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         url: '/dash',
         views: {
             'menuWorPress': {
-                templateUrl: 'templates/tab-dash.html',
+                templateUrl: 'templates/dash.html',
                 controller: 'DashCtrl'
             }
         }
@@ -60,7 +60,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         url: '/chats',
         views: {
             'menuWorPress': {
-                templateUrl: 'templates/tab-chats.html',
+                templateUrl: 'templates/chats.html',
                 controller: 'ChatsCtrl'
             }
         }
@@ -75,12 +75,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
       })
 
-    .state('tab.account', {
-        url: '/account',
+    .state('tab.settings', {
+        url: '/settings',
         views: {
             'menuWorPress': {
-                templateUrl: 'templates/tab-account.html',
-                controller: 'AccountCtrl'
+                templateUrl: 'templates/settings.html',
+                controller: 'SettingsCtrl'
             }
         }
     })
@@ -89,7 +89,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         url: '/news',
         views: {
             'menuWorPress': {
-                templateUrl: 'templates/tab-news.html',
+                templateUrl: 'templates/news.html',
                 controller: 'NewsCtrl'
             }
         }
@@ -122,7 +122,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 	     cache: false,
 	     views: {
 	         'menuWorPress': {
-	             templateUrl: "templates/tab-news.html",
+	             templateUrl: "templates/news.html",
 	             controller: "CategoryCtrl"
 	         }
 	     }
@@ -163,14 +163,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 })
 
 .constant("Config", {
-    "WebUrl": "http://www.app.afnainews.com/api/",
-    "AppName": "News Reader",
-    "AndroidAppUrl": "https://play.google.com/store/apps/details?id=com.myspecialgames.advanced2048game",
+    "WebUrl": 'http://app.afnainews.com/api/',
+    "AppName": "Afnai News",
+    "AndroidAppUrl": "https://play.google.com/store/apps/details?id=com.afnainews",
     "ErrorMessage": "End of results"
 })
 // config contact
 .constant("ConfigContact", {
-    "EmailId": "weblogtemplatesnet@gmail.com",
+    "EmailId": "bipinu23@gmail.com",
     "ContactSubject": "Contact"
 })
 // config admon
@@ -180,7 +180,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 })
 // color variations
 .constant("Color", {
-    "AppColor": "light", //light, stable, positive, calm, balanced, energized, assertive, royal, dark
+    "AppColor": "balanced", //light, stable, positive, calm, balanced, energized, assertive, royal, dark
 })
 // push notification
 .constant("PushNoti", {

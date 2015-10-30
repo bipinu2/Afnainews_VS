@@ -19,11 +19,6 @@ angular.module('starter.controllers', [])
     $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function ($scope) {
-    $scope.settings = {
-        enableFriends: true
-    };
-})
 .controller('NewsCtrl', function ($scope, $state, News) {
     //$scope.news = News.getPosts('0');
     $scope.heading = "news";
@@ -258,6 +253,44 @@ angular.module('starter.controllers', [])
 
 /* About us Controller */
 .controller('AboutCtrl', ['$scope', function ($scope) {
+}])
+
+
+.controller('SettingsCtrl', ['$scope', 'SendPush', 'Config', function ($scope, SendPush, Config) {
+    $scope.settings = {
+        enableFriends: true
+    };
+    $scope.AndroidAppUrl = Config.AndroidAppUrl;
+    $scope.AppName = Config.AppName;
+
+    $scope.pushNot = [];
+    $scope.pushNot.pushStatus = false;
+
+    //document.addEventListener("deviceready", function () {
+    //    SendPush.getDetails(device.uuid)
+    //	.success(function (data) {
+    //	    if (data.enable == 'yes') {
+    //	        $scope.pushNot.pushStatus = true;
+    //	    }
+    //	})
+    //	.error(function (error) {
+    //	    //alert('error'+data)
+    //	});
+    //});
+    $scope.savePushDetails = function () {
+        $scope.sendStatus = 'no';
+        if ($scope.pushNot.pushStatus == true) {
+            $scope.sendStatus = 'yes';
+        }
+        SendPush.savePushDetails(device.uuid, $scope.sendStatus)
+		.success(function (data) {
+		    // alert success
+		})
+		.error(function (error) {
+		    //alert('error'+data)
+		});
+    }
+
 }])
 
 /* Contact us form page */
