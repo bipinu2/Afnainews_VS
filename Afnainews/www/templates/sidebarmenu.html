@@ -1,0 +1,60 @@
+﻿<ion-side-menus enable-menu-with-back-views="false" ng-controller="DashCtrl">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-{{appColor}}" align-title="center">
+            <ion-nav-back-button class="button-clear">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <ion-spinner ng-if="$root.showExtraButton" icon="spiral"></ion-spinner>
+                <a class="button button-icon button-clear ion-ios-search" ui-sref="news.search">
+                </a>
+                <a class="button button-icon button-clear ion-gear-b" ui-sref="news.settings">
+                </a>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuWorPress"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar bar-dark">
+            <h1 class="title">Menu</h1>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list>
+                <ion-item  name="tab-dash" menu-close-keep-history href="#/tab/dash" class="item-icon-left">
+                    <i class="icon ion-ios-home"></i>
+                    Home
+                </ion-item>
+                <ion-item menu-close-keep-history href="#/tab/news" class="item-icon-left">
+                    <i class="icon ion-ios-pricetag-outline"></i>
+                    News
+                </ion-item>   
+                <ion-item menu-close-keep-history href="#/tab/categories" class="item-icon-left">
+                    <i class="icon ion-ios-pricetag-outline"></i>
+                    Categories
+                </ion-item>               
+                <ion-item menu-close-keep-history href="#/tab/chats" class="item-icon-left">
+                    <i class="icon ion-ios-chatboxes"></i>
+                    Chats
+                </ion-item>
+                <ion-item menu-close-keep-history href="#/tab/about" class="item-icon-left">
+                    <i class="icon ion-person"></i>
+                    About
+                </ion-item>
+                <ion-item menu-close-keep-history href="#/tab/contact" class="item-icon-left">
+                    <i class="icon ion-email"></i>
+                    Contact
+                </ion-item>
+                <ion-item menu-close-keep-history href="#/tab/account" class="item-icon-left">
+                    <i class="icon ion-gear-b"></i>
+                    Account Settings
+                </ion-item>
+                <ion-item menu-close-keep-history href="#/tab/admob" class="item-icon-left">
+                    <i class="icon ion-cash"></i>
+                    Admob
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
