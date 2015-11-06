@@ -165,7 +165,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 .constant("Config", {
     "WebUrl": 'http://app.afnainews.com/api/',
     "AppName": "Afnai News",
-    "AndroidAppUrl": "https://play.google.com/store/apps/details?id=com.afnainews",
+    "AndroidAppUrl": "#",
     "ErrorMessage": "End of results"
 })
 // config contact
